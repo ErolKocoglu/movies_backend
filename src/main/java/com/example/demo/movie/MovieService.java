@@ -16,7 +16,7 @@ public class MovieService {
     private final MovieMapper movieMapper;
 
     public List<MovieResponse> getAllMovies(int page) {
-        return movieRepository.find20(page).stream()
+        return movieRepository.find20(page*20).stream()
                 .map(movieMapper::toMovieResponse)
                 .collect(Collectors.toList());
     }

@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Primary;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        var context = SpringApplication.run(DemoApplication.class, args);
-        Service service = context.getBean("makeEntity",Service.class);
+        SpringApplication.run(DemoApplication.class, args);
+        //Service service = context.getBean("makeEntity",Service.class);
 
-        service.serviceCall();
+        //service.serviceCall();
 
     }
 

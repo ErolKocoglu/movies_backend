@@ -13,6 +13,6 @@ public record MovieResponse(Integer id,
                             String director,
                             String star1, String star2, String star3, String star4,
                             Integer numberOfVotes,
-                            Integer gross) {
+                            String gross) {
 
 }

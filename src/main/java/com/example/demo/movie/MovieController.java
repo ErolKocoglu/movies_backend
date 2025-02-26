@@ -35,6 +35,7 @@ public class MovieController {
     public ResponseEntity<List<MovieResponse>> getMoviesByGenre(
             @PathVariable String genre,
             @PathVariable(required = false) Integer pageNumber) {
+        System.out.println(genre);
         if (pageNumber == null) {
             pageNumber = 0;
         }
@@ -45,6 +46,7 @@ public class MovieController {
     public ResponseEntity<List<MovieResponse>> getMoviesByDirector(
             @PathVariable String director,
             @PathVariable(required = false) Integer pageNumber) {
+        System.out.println(director);
         if (pageNumber == null) {
             pageNumber = 0;
         }
