@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequestMapping("/api")
 @RestController
 @RequiredArgsConstructor
 public class MovieController {
     private final MovieService movieService;
 
-    //Optional path variables
+    //Optional path variables /movies
     @GetMapping(value = {"/", "/{pageNumber}"})
     public ResponseEntity<List<MovieResponse>> getMovies(@PathVariable(required = false) Integer pageNumber) {
         if (pageNumber == null) {
@@ -22,6 +23,7 @@ public class MovieController {
         return ResponseEntity.status(HttpStatus.OK).body(movieService.getAllMovies(pageNumber));
     }
 
+    @CrossOrigin
     @GetMapping("/movies/{id}")
     public ResponseEntity<MovieResponse> getMovie(@PathVariable Integer id) {
         MovieResponse movie = movieService.getMovieById(id);
